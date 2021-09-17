@@ -40,11 +40,13 @@ class APILoginView(baseviews.LoginView):
 
         data = {
             # "token": token,
-            "cors_origin_regex_whitelist": settings.CORS_ALLOWED_ORIGINS,
+            # "cors_origin_regex_whitelist": settings.CORS_ALLOWED_ORIGINS,
             "next_page": next_page,
         }
 
-        return JsonResponse(json.dump(user))
+        print(user)
+
+        return JsonResponse({"hello": "hello"})
 
 
 class APILogoutView(baseviews.LogoutView):
